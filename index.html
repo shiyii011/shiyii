@@ -176,6 +176,7 @@
     </div>
 
     <div class="footer">
+        <div class="last-updated" id="last-update">LAST UPDATE: LOADING...</div>
         © 2026 shiyii
     </div>
     </div>
@@ -204,6 +205,17 @@
         modal.addEventListener('click', (e) => {
             if (e.target === modal) modal.style.display = 'none';
         });
+
+        // 自動抓取並格式化網頁最後更新時間
+        const lastModifiedDate = new Date(document.lastModified);
+        const year = lastModifiedDate.getFullYear();
+        const month = String(lastModifiedDate.getMonth() + 1).padStart(2, '0');
+        const day = String(lastModifiedDate.getDate()).padStart(2, '0');
+        
+        const updateElem = document.getElementById('last-update');
+        if (updateElem) {
+            updateElem.textContent = `LAST UPDATE: ${year}.${month}.${day}`;
+        }
     </script>
 </body>
 </html>
