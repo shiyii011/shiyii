@@ -11,12 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
+    
 <div class="container">
     <!-- 個人資訊 -->
     <div class="profile-card">
         <img src="img/bio.jpg" alt="頭貼" class="avatar">
         <h1 class="name">十一</h1>
-        <p class="handle">@shi_.yii</p>
+        <p class="handle">@shi_.yii</p><br>
+        <p class="info">逮灣郎｜🚺｜18↑</p>
     </div>
 
     <!-- 關於我 -->
@@ -24,7 +26,6 @@
         <div class="card-title">About Me</div>
         <p class="bio-text">
             我是十一，可以叫我十一/11<br>
-            歹灣郎｜🚺｜18↑<br>
             日常愛用、、、跟括號，表符、顏文字都會出現<br>
             喜歡看BL，想亂叫跟碎碎念才會開這隻帳號，所以日常會蠻吵ㄉ<br>
             愛看日漫，動、漫畫都看，深坑我英、排少、咒迴<br>
@@ -43,7 +44,7 @@
         <div class="tag-group">
             <span class="tag">年下攻</span>
             <span class="tag">強受</span>
-            <span class="tag">強強</span>
+            <span class="tag">雙強</span>
             <span class="tag">一見鍾情</span>
             <span class="tag">前世</span>
             <span class="tag">動物塑</span>
@@ -53,28 +54,82 @@
         </div>
     </div>
 
-    <!-- 垂直排作品牆 -->
     <div class="info-card">
         <div class="card-title">
-            愛作💘
+            <span>愛作💘</span>
+            <span class="hint">點擊前往作品</span>
         </div>
         <div class="gallery-container vertical-gallery">
-            <div class="gallery-item">
+            <!-- 作品 1 -->
+            <a href="https://www.bomtoon.tw/detail/soft_night" target="_blank" rel="noopener noreferrer" class="gallery-item external-link">
                 <img src="img/love/love1.jpeg" alt="今晚溫柔點">
-            </div>
-            <div class="gallery-item">
+            </a>
+            <!-- 作品 2 -->
+            <a href="https://www.bomtoon.tw/detail/kissmeifyoucan" target="_blank" rel="noopener noreferrer" class="gallery-item external-link">
                 <img src="img/love/love2.jpeg" alt="Kiss Me If You Can">
-            </div>
-            <div class="gallery-item">
+            </a>
+            <!-- 作品 3 -->
+            <a href="https://www.bomtoon.tw/detail/hunter_q" target="_blank" rel="noopener noreferrer" class="gallery-item external-link">
                 <img src="img/love/love5.jpeg" alt="獵人只想安靜生活">
+            </a>
+        </div>
+    </div>
+<!-- 📸 周邊相片冊區塊（已支援左右滑動） -->
+<div class="info-card">
+    <div class="card-title">
+        <span>周邊掉落 📸</span>
+        <span class="hint">左右滑動查看 ➔</span>
+    </div>
+    <p class="hint" style="font-size: 8.5pt; margin-bottom: 12px;">隨手拍拍留個紀錄 點擊放大查看</p>
+    
+    <div class="polaroid-grid gallery-container">
+        <!-- 照片 1 -->
+        <div class="polaroid-card gallery-item">
+            <div class="polaroid-inner">
+                <img src="img/merch/merch1.jpg" alt="周邊 1">
+                <span class="polaroid-caption"></span>
+            </div>
+        </div>
+        <!-- 照片 2 -->
+        <div class="polaroid-card gallery-item">
+            <div class="polaroid-inner">
+                <img src="img/merch/merch2.jpg" alt="周邊 2">
+                <span class="polaroid-caption"></span>
+            </div>
+        </div>
+        <!-- 照片 3 -->
+        <div class="polaroid-card gallery-item">
+            <div class="polaroid-inner">
+                <img src="img/merch/merch3.jpg" alt="周邊 3">
+                <span class="polaroid-caption"></span>
+            </div>
+        </div>
+        <!-- 照片 4 -->
+        <div class="polaroid-card gallery-item">
+            <div class="polaroid-inner">
+                <img src="img/merch/merch4.jpg" alt="周邊 4">
+                <span class="polaroid-caption"></span>
+            </div>
+        </div>
+        <div class="polaroid-card gallery-item">
+            <div class="polaroid-inner">
+                <img src="img/merch/merch5.jpg " alt="周邊 5">
+                <span class="polaroid-caption"></span>
+            </div>
+        </div>
+        <div class="polaroid-card gallery-item">
+            <div class="polaroid-inner">
+                <img src="img/merch/merch6.jpg" alt="周邊 6">
+                <span class="polaroid-caption"></span>
             </div>
         </div>
     </div>
+</div>
 
     <div class="info-card">
         <div class="card-title">
             購證
-            <span class="hint">點擊查看全圖</span>
+            <span class="hint">8/11更新</span>
         </div>
         <div class="gallery-container">
             <!-- 照片 1 -->
@@ -155,15 +210,14 @@
         const modalImg = document.getElementById('modal-img');
         const closeBtn = document.querySelector('.modal-close');
 
-        // 監聽所有相簿內的圖片點擊
-        document.querySelectorAll('.gallery-item img').forEach(img => {
-            img.addEventListener('click', () => {
-                if (img.src) {
-                    modal.style.display = 'flex';
-                    modalImg.src = img.src;
-                }
-            });
+        document.querySelectorAll('.gallery-item:not(.external-link) img').forEach(img => {
+        img.addEventListener('click', () => {
+            if (img.src) {
+                modal.style.display = 'flex';
+                modalImg.src = img.src;
+            }
         });
+    });
 
         // 點擊關閉按鈕或背景時關閉
         closeBtn.addEventListener('click', () => modal.style.display = 'none');
