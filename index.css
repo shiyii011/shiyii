@@ -339,3 +339,16 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+/* ===== 最後更新日期標籤（像素風） ===== */
+.last-updated {
+    font-family: "Press Start 2P", monospace;
+    font-size: 0.65rem;
+    color: var(--accent);
+    background: #fff;
+    border: 1.5px solid var(--pixel-border);
+    box-shadow: 2px 2px 0px var(--pixel-border);
+    display: inline-block;
+    padding: 4px 8px;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+}
