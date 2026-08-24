@@ -230,3 +230,112 @@ body {
     font-weight: bold;
     cursor: pointer;
 }
+/* ===== 1. 避雷須知（Warning 卡片）樣式 ===== */
+.warning-card {
+    background: #fffdfa; /* 帶一點微黃警告紙質感 */
+    border-color: #1a1c1a;
+}
+
+.notice-section {
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+.notice-title {
+    font-weight: 700;
+    margin-bottom: 6px;
+    padding: 2px 6px;
+    display: inline-block;
+    border: 1.5px solid var(--pixel-border);
+    box-shadow: 2px 2px 0px var(--pixel-border);
+}
+
+.notice-title.reject {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+.notice-title.welcome {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.notice-list {
+    list-style: none;
+    padding-left: 6px;
+    margin-top: 4px;
+}
+
+.notice-list li {
+    position: relative;
+    padding-left: 14px;
+    margin-bottom: 3px;
+    color: var(--text-main);
+}
+
+.notice-list li::before {
+    content: "▪";
+    position: absolute;
+    left: 0;
+    color: var(--pixel-border);
+}
+
+/* ===== 2. 拍立得周邊展示（Polaroid Grid） ===== */
+/* ===== 2. 拍立得周邊展示（水平滑動版） ===== */
+.polaroid-grid {
+    display: flex !important;
+    gap: 16px;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 8px 4px 12px 4px; /* 保留陰影與旋轉空間 */
+    scrollbar-width: thin;
+    scrollbar-color: var(--pixel-border) transparent;
+}
+
+.polaroid-card {
+    flex: 0 0 160px !important; /* 固定每張拍立得的寬度，不被壓縮 */
+    scroll-snap-align: start;
+    background: #ffffff;
+    border: 2px solid var(--pixel-border);
+    box-shadow: 4px 4px 0px var(--pixel-border);
+    padding: 8px 8px 10px 8px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    cursor: pointer;
+}
+
+/* 手作拍立得微歪斜感 */
+.polaroid-card:nth-child(odd) {
+    transform: rotate(-1.5deg);
+}
+.polaroid-card:nth-child(even) {
+    transform: rotate(1.5deg);
+}
+
+.polaroid-card:hover {
+    transform: scale(1.04) rotate(0deg);
+    box-shadow: 6px 6px 0px var(--pixel-border);
+    z-index: 2;
+}
+
+.polaroid-inner img {
+    width: 100% !important;
+    height: 160px !important; /* 固定圖片高度 */
+    object-fit: cover;
+    border: 1px solid var(--pixel-border) !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    display: block;
+}
+
+.polaroid-caption {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-sub);
+    margin-top: 8px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
