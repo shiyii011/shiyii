@@ -1,24 +1,31 @@
 :root {
-    --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    --card-bg: rgba(255, 255, 255, 0.75);
-    --card-border: rgba(255, 255, 255, 0.5);
-    --text-main: #1f2937;
-    --text-sub: #6b7280;
-    --tag-bg: rgba(0, 0, 0, 0.05);
-    --btn-bg: #ffffff;
-    --btn-hover: #111827;
-    --btn-text-hover: #ffffff;
+    /* 像素感配色：CRT 綠/復古灰底，或可改成黑底霓虹色 */
+    --bg-color: #e0e5db;
+    --card-bg: #ffffff;
+    --pixel-border: #1a1c1a;
+    --pixel-shadow: #879180;
+    --text-main: #1a1c1a;
+    --text-sub: #525a4d;
+    --accent: #5c8b57;
+    --tag-bg: #f4f6f1;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Noto Serif TC", "Songti TC", "Source Han Serif TC", Georgia, serif;
+    /* 像素字體渲染抗鋸齒處理 */
+    font-family: "DotGothic16", monospace, sans-serif;
+    image-rendering: pixelated;
 }
 
 body {
-    background: var(--bg-gradient);
+    background-color: var(--bg-color);
+    /* 復古像素網格背景 */
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 8px 8px;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -32,7 +39,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 24px;
 }
 
 /* 個人大頭貼與標題 */
@@ -42,45 +49,47 @@ body {
 }
 
 .avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    width: 96px;
+    height: 96px;
+    border-radius: 0; /* 像素風去圓角 */
     object-fit: cover;
-    border: 3px solid #ffffff;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    border: 3px solid var(--pixel-border);
+    /* 像素階梯硬陰影 */
+    box-shadow: 4px 4px 0px var(--pixel-border);
     margin-bottom: 12px;
 }
 
 .name {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
 }
 
 .handle {
-    font-size: 0.9rem;
+    font-family: "Press Start 2P", monospace;
+    font-size: 0.75rem;
     color: var(--text-sub);
-    margin-top: 4px;
+    margin-top: 6px;
 }
 
-/* 資訊卡片區塊 */
+/* 資訊卡片區塊 - 像素邊框與硬陰影 */
 .info-card {
     background: var(--card-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--card-border);
-    border-radius: 20px;
-    padding: 18px 20px;
+    border: 3px solid var(--pixel-border);
+    border-radius: 0; /* 取消圓角 */
+    padding: 16px 18px;
     width: 100%;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    /* 雙層像素立體陰影 */
+    box-shadow: 6px 6px 0px var(--pixel-border);
+    position: relative;
 }
 
 .card-title {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--text-sub);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-main);
+    border-bottom: 2px dashed var(--pixel-border);
+    padding-bottom: 8px;
     margin-bottom: 12px;
     display: flex;
     justify-content: space-between;
@@ -89,15 +98,12 @@ body {
 
 .card-title span.hint {
     font-size: 0.75rem;
-    font-weight: 400;
     color: var(--text-sub);
-    text-transform: none;
-    letter-spacing: 0;
 }
 
 .bio-text {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    line-height: 1.7;
     color: var(--text-main);
 }
 
@@ -112,64 +118,61 @@ body {
 .tag {
     background: var(--tag-bg);
     color: var(--text-main);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
-    transition: all 0.2s ease;
+    padding: 4px 10px;
+    border-radius: 0;
+    font-size: 0.8rem;
+    border: 2px solid var(--pixel-border);
+    box-shadow: 2px 2px 0px var(--pixel-border);
+    transition: transform 0.1s ease;
     user-select: none;
 }
 
-/* 滑鼠滑過標籤效果 */
+/* 像素點擊回饋感（下壓效果） */
 .tag:hover {
-    background: rgba(255, 255, 255, 0.9);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    background: #fff;
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0px var(--pixel-border);
 }
 
-/* ===== 左右滑動照片牆（購證使用） ===== */
+.tag:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px var(--pixel-border);
+}
+
+/* ===== 照片牆（水平滑動） ===== */
 .gallery-container {
     display: flex;
     gap: 12px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 4px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-.gallery-container::-webkit-scrollbar {
-    display: none;
+    padding-bottom: 6px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--pixel-border) transparent;
 }
 
 .gallery-item {
-    flex: 0 0 160px;
+    flex: 0 0 140px;
     scroll-snap-align: start;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
 }
 
 .gallery-item img {
     width: 100%;
-    height: 250px;
+    height: 220px;
     object-fit: cover;
-    border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 0;
+    border: 2px solid var(--pixel-border);
+    box-shadow: 3px 3px 0px var(--pixel-border);
     cursor: pointer;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition: transform 0.1s ease;
 }
 
 .gallery-item img:hover {
-    transform: scale(1.02);
-    opacity: 0.95;
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--pixel-border);
 }
 
-/* ===== 垂直排列照片牆（愛作使用） ===== */
+/* ===== 垂直排列照片牆 ===== */
 .gallery-container.vertical-gallery {
     flex-direction: column;
     overflow-x: visible;
@@ -187,39 +190,9 @@ body {
     max-height: 400px;
 }
 
-/* 連結按鈕 */
-.link-list {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.link-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 20px;
-    background: var(--btn-bg);
-    color: var(--text-main);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    border-radius: 16px;
-    border: 1px solid var(--card-border);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    transition: all 0.25s ease;
-}
-
-.link-button:hover {
-    background: var(--btn-hover);
-    color: var(--btn-text-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-}
-
 .footer {
-    font-size: 0.75rem;
+    font-family: "Press Start 2P", monospace;
+    font-size: 0.65rem;
     color: var(--text-sub);
     margin-top: 10px;
 }
@@ -233,18 +206,18 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(26, 28, 26, 0.85);
     justify-content: center;
     align-items: center;
-    animation: fadeIn 0.2s ease;
 }
 
 .modal-content {
     max-width: 90%;
     max-height: 85vh;
     object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 0;
+    border: 4px solid #fff;
+    box-shadow: 8px 8px 0px #000;
 }
 
 .modal-close {
@@ -252,13 +225,8 @@ body {
     top: 20px;
     right: 30px;
     color: #fff;
-    font-size: 35px;
+    font-family: "Press Start 2P", monospace;
+    font-size: 28px;
     font-weight: bold;
     cursor: pointer;
-    line-height: 1;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
