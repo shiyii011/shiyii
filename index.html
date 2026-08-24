@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | 自我介紹</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <!-- 個人資訊 -->
+    <div class="profile-card">
+        <img src="img/bio.jpg" alt="頭貼" class="avatar">
+        <h1 class="name">十一</h1>
+        <p class="handle">@shi_.yii</p>
+    </div>
+
+    <!-- 關於我 -->
+    <div class="info-card">
+        <div class="card-title">About Me</div>
+        <p class="bio-text">
+            我是十一，可以叫我十一/11<br>
+            歹灣郎｜🚺｜18↑<br>
+            日常愛用、、、跟括號，表符、顏文字都會出現<br>
+            喜歡看BL，想亂叫跟碎碎念才會開這隻帳號，所以日常會蠻吵ㄉ<br>
+            愛看日漫，動、漫畫都看，深坑我英、排少、咒迴<br>
+            偶爾會掉落照片，拍開心的留個紀錄<br>
+            正在學鉤織，所以會有作品照（應該吧）（緩慢）<br>
+            很雷盜版，知盜看盜。婉拒未成年<br> 
+        </p>
+    </div>
+
+    <!-- 喜歡的屬性（標籤區塊） -->
+    <div class="info-card">
+        <div class="card-title">
+            喜歡的屬性 🏷️
+        </div>
+        <p class="hint" style="font-size: 9pt; margin-bottom: 5px;">喜好很多路過就會吃一口</p>
+        <div class="tag-group">
+            <span class="tag">年下攻</span>
+            <span class="tag">強受</span>
+            <span class="tag">強強</span>
+            <span class="tag">一見鍾情</span>
+            <span class="tag">前世</span>
+            <span class="tag">動物塑</span>
+            <span class="tag">重逢</span>
+            <span class="tag">竹馬</span>
+            <span class="tag">忠犬攻</span>
+        </div>
+    </div>
+
+    <!-- 垂直排作品牆 -->
+    <div class="info-card">
+        <div class="card-title">
+            愛作💘
+        </div>
+        <div class="gallery-container vertical-gallery">
+            <div class="gallery-item">
+                <img src="img/love/love1.jpeg" alt="今晚溫柔點">
+            </div>
+            <div class="gallery-item">
+                <img src="img/love/love2.jpeg" alt="Kiss Me If You Can">
+            </div>
+            <div class="gallery-item">
+                <img src="img/love/love5.jpeg" alt="獵人只想安靜生活">
+            </div>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <div class="card-title">
+            購證
+            <span class="hint">點擊查看全圖</span>
+        </div>
+        <div class="gallery-container">
+            <!-- 照片 1 -->
+            <div class="gallery-item">
+                <img src="img/buy/buy_1.jpeg" alt="buy1">
+            </div>
+            <!-- 照片 2 -->
+            <div class="gallery-item">
+                <img src="img/buy/buy_2.jpeg" alt="buy2">
+            </div>
+            <!-- 照片 3 -->
+            <div class="gallery-item">
+                <img src="img/buy/buy_3.jpeg" alt="buy3">
+            </div>
+            <!-- 照片 4 -->
+            <div class="gallery-item">
+                <img src="img/buy/buy_4.jpeg" alt="buy4">
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/buy/buy_5.jpeg" alt="buy5">
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/buy/buy_6.jpeg" alt="buy6">
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/buy/buy_7.jpeg" alt="buy7">
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/buy/buy_8.jpeg" alt="buy8">
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/buy/buy_9.jpeg" alt="buy9">
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/buy/buy_10.jpeg" alt="buy10">
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/buy/buy_11.jpeg" alt="buy11">
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/buy/buy_12.jpeg" alt="buy12">
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/buy/buy_13.jpeg" alt="buy13">
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/buy/buy_14.jpeg" alt="buy14">
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/buy/buy_15.jpeg" alt="buy15">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2026 shiyii
+    </div>
+    </div>
+    <!-- 燈箱彈窗結構 -->
+    <div id="image-modal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modal-img" alt="放大照片">
+    </div>
+
+    <script>
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-img');
+        const closeBtn = document.querySelector('.modal-close');
+
+        // 監聽所有相簿內的圖片點擊
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.addEventListener('click', () => {
+                if (img.src) {
+                    modal.style.display = 'flex';
+                    modalImg.src = img.src;
+                }
+            });
+        });
+
+        // 點擊關閉按鈕或背景時關閉
+        closeBtn.addEventListener('click', () => modal.style.display = 'none');
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

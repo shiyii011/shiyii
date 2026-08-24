@@ -1,0 +1,264 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --card-bg: rgba(255, 255, 255, 0.75);
+    --card-border: rgba(255, 255, 255, 0.5);
+    --text-main: #1f2937;
+    --text-sub: #6b7280;
+    --tag-bg: rgba(0, 0, 0, 0.05);
+    --btn-bg: #ffffff;
+    --btn-hover: #111827;
+    --btn-text-hover: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Serif TC", "Songti TC", "Source Han Serif TC", Georgia, serif;
+}
+
+body {
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 16px;
+    color: var(--text-main);
+}
+
+.container {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 個人大頭貼與標題 */
+.profile-card {
+    text-align: center;
+    width: 100%;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    margin-bottom: 12px;
+}
+
+.name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.handle {
+    font-size: 0.9rem;
+    color: var(--text-sub);
+    margin-top: 4px;
+}
+
+/* 資訊卡片區塊 */
+.info-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 18px 20px;
+    width: 100%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.card-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-sub);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-title span.hint {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--text-sub);
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.bio-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-main);
+}
+
+/* ===== 標籤群組 ===== */
+.tag-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.tag {
+    background: var(--tag-bg);
+    color: var(--text-main);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+/* 滑鼠滑過標籤效果 */
+.tag:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== 左右滑動照片牆（購證使用） ===== */
+.gallery-container {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.gallery-container::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-item {
+    flex: 0 0 160px;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.02);
+    opacity: 0.95;
+}
+
+/* ===== 垂直排列照片牆（愛作使用） ===== */
+.gallery-container.vertical-gallery {
+    flex-direction: column;
+    overflow-x: visible;
+    gap: 16px;
+}
+
+.gallery-container.vertical-gallery .gallery-item {
+    flex: 1 1 auto;
+    width: 100%;
+}
+
+.gallery-container.vertical-gallery .gallery-item img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+}
+
+/* 連結按鈕 */
+.link-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.link-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 20px;
+    background: var(--btn-bg);
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: all 0.25s ease;
+}
+
+.link-button:hover {
+    background: var(--btn-hover);
+    color: var(--btn-text-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    font-size: 0.75rem;
+    color: var(--text-sub);
+    margin-top: 10px;
+}
+
+/* ===== 燈箱彈窗 ===== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.2s ease;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
