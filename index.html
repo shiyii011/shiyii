@@ -10,173 +10,183 @@
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-<div class="container">
-    <!-- 個人資訊 -->
-    <div class="profile-card">
-        <img src="img/bio.jpg" alt="頭貼" class="avatar">
-        <h1 class="name">十一</h1>
-        <p class="handle">@shi_.yii</p><br>
-        <p class="info">逮灣郎｜♀️｜18↑</p>
+    <div class="scroll-progress" id="scroll-progress"></div>
+    <div class="container">
+        <!-- 個人資訊 -->
+        <div class="profile-card">
+            <div class="avatar-wrap">
+                <img src="img/bio.jpg" alt="頭貼" class="avatar" id="avatar-btn" title="點我一下！">
+                <div class="pixel-bubble" id="speech-bubble">點我有話說</div>
+            </div>
+            <h1 class="name">十一</h1>
+            <p class="handle">@shi_.yii</p><br>
+            <p class="info">逮灣郎｜♀️｜18↑</p>
+        </div>
+
+        <!-- 關於我 -->
+        <div class="info-card">
+            <div class="card-title">About Me</div>
+            <p class="bio-text">
+                我是十一，可以叫我十一/11<br>
+                日常愛用、、、跟括號，表符、顏文字都會出現<br>
+                愛看BL，台日韓都看<br>
+                想亂叫跟碎碎念才會開這隻帳號，所以日常會蠻吵ㄉ<br>
+                也喜歡看日漫，動、漫畫都看，深坑我英、排少、咒迴<br>
+                偶爾會掉落照片，拍開心的留個紀錄<br>
+                正在學鉤織，所以會有作品照（應該吧）（緩慢）<br>
+                很雷盜版，知盜看盜。婉拒未成年<br> 
+            </p>
+        </div>
+
+        <!-- 喜歡的屬性（標籤區塊） -->
+        <div class="info-card">
+            <div class="card-title">
+                喜歡的屬性（偏愛） 🏷️
+            </div>
+            <p class="hint" style="font-size: 9pt; margin-bottom: 5px;">喜好很多路過就會吃一口</p>
+            <div class="tag-group">
+                <span class="tag">年下攻</span>
+                <span class="tag">強受</span>
+                <span class="tag">雙強</span>
+                <span class="tag">美人受</span>
+                <span class="tag">一見鍾情</span>
+                <span class="tag">前世</span>
+                <span class="tag">動物塑</span>
+                <span class="tag">重逢</span>
+                <span class="tag">竹馬</span>
+                <span class="tag">忠犬攻</span>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="card-title">
+                <span>愛作💘</span>
+                <span class="hint">點擊前往觀看（一起花錢）</span>
+            </div>
+            <div class="gallery-container vertical-gallery">
+                <!-- 作品 1 -->
+                <a href="https://www.bomtoon.tw/detail/soft_night" target="_blank" rel="noopener noreferrer" class="gallery-item external-link">
+                    <img src="img/love/love1.jpeg" alt="今晚溫柔點">
+                </a>
+                <!-- 作品 2 -->
+                <a href="https://www.bomtoon.tw/detail/kissmeifyoucan" target="_blank" rel="noopener noreferrer" class="gallery-item external-link">
+                    <img src="img/love/love2.jpeg" alt="Kiss Me If You Can">
+                </a>
+                <!-- 作品 3 -->
+                <a href="https://www.bomtoon.tw/detail/hunter_q" target="_blank" rel="noopener noreferrer" class="gallery-item external-link">
+                    <img src="img/love/love5.jpeg" alt="獵人只想安靜生活">
+                </a>
+            </div>
+        </div>
+
+        <!-- 📸 周邊相片冊區塊 -->
+        <div class="info-card">
+            <div class="card-title">
+                <span>周邊 📸</span>
+                <span class="hint">左右滑動查看 ➔</span>
+            </div>    
+            <div class="polaroid-grid gallery-container">
+                <div class="polaroid-card gallery-item">
+                    <div class="polaroid-inner">
+                        <img src="img/merch/merch1.jpg" alt="周邊 1">
+                        <span class="polaroid-caption"></span>
+                    </div>
+                </div>
+                <div class="polaroid-card gallery-item">
+                    <div class="polaroid-inner">
+                        <img src="img/merch/merch2.jpg" alt="周邊 2">
+                        <span class="polaroid-caption"></span>
+                    </div>
+                </div>
+                <div class="polaroid-card gallery-item">
+                    <div class="polaroid-inner">
+                        <img src="img/merch/merch3.jpg" alt="周邊 3">
+                        <span class="polaroid-caption"></span>
+                    </div>
+                </div>
+                <div class="polaroid-card gallery-item">
+                    <div class="polaroid-inner">
+                        <img src="img/merch/merch4.jpg" alt="周邊 4">
+                        <span class="polaroid-caption"></span>
+                    </div>
+                </div>
+                <div class="polaroid-card gallery-item">
+                    <div class="polaroid-inner">
+                        <img src="img/merch/merch5.jpg " alt="周邊 5">
+                        <span class="polaroid-caption"></span>
+                    </div>
+                </div>
+                <div class="polaroid-card gallery-item">
+                    <div class="polaroid-inner">
+                        <img src="img/merch/merch6.jpg" alt="周邊 6">
+                        <span class="polaroid-caption"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="card-title">
+                購證 💸
+                <span class="hint">8/11更新</span>
+            </div>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="img/buy/buy_1.jpeg" alt="buy1">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/buy/buy_2.jpeg" alt="buy2">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/buy/buy_3.jpeg" alt="buy3">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/buy/buy_4.jpeg" alt="buy4">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/buy/buy_5.jpeg" alt="buy5">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/buy/buy_6.jpeg" alt="buy6">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/buy/buy_7.jpeg" alt="buy7">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/buy/buy_8.jpeg" alt="buy8">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/buy/buy_9.jpeg" alt="buy9">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/buy/buy_10.jpeg" alt="buy10">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/buy/buy_11.jpeg" alt="buy11">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/buy/buy_12.jpeg" alt="buy12">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/buy/buy_13.jpeg" alt="buy13">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/buy/buy_14.jpeg" alt="buy14">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/buy/buy_15.jpeg" alt="buy15">
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="last-updated" id="last-update">LAST UPDATE: LOADING...</div>
+        </div>
     </div>
 
-    <!-- 關於我 -->
-    <div class="info-card">
-        <div class="card-title">About Me</div>
-        <p class="bio-text">
-            我是十一，可以叫我十一/11<br>
-            日常愛用、、、跟括號，表符、顏文字都會出現<br>
-            喜歡看BL，想亂叫跟碎碎念才會開這隻帳號，所以日常會蠻吵ㄉ<br>
-            愛看日漫，動、漫畫都看，深坑我英、排少、咒迴<br>
-            偶爾會掉落照片，拍開心的留個紀錄<br>
-            正在學鉤織，所以會有作品照（應該吧）（緩慢）<br>
-            很雷盜版，知盜看盜。婉拒未成年<br> 
-        </p>
-    </div>
+    <!-- 浮動提示 Toast -->
+    <div id="pixel-toast" class="pixel-toast"></div>
 
-    <!-- 喜歡的屬性（標籤區塊） -->
-    <div class="info-card">
-        <div class="card-title">
-            喜歡的屬性 🏷️
-        </div>
-        <p class="hint" style="font-size: 9pt; margin-bottom: 5px;">喜好很多路過就會吃一口</p>
-        <div class="tag-group">
-            <span class="tag">年下攻</span>
-            <span class="tag">強受</span>
-            <span class="tag">雙強</span>
-            <span class="tag">一見鍾情</span>
-            <span class="tag">前世</span>
-            <span class="tag">動物塑</span>
-            <span class="tag">重逢</span>
-            <span class="tag">竹馬</span>
-            <span class="tag">忠犬攻</span>
-        </div>
-    </div>
-
-    <div class="info-card">
-        <div class="card-title">
-            <span>愛作💘</span>
-            <span class="hint">點擊前往觀看（花錢）</span>
-        </div>
-        <div class="gallery-container vertical-gallery">
-            <!-- 作品 1 -->
-            <a href="https://www.bomtoon.tw/detail/soft_night" target="_blank" rel="noopener noreferrer" class="gallery-item external-link">
-                <img src="img/love/love1.jpeg" alt="今晚溫柔點">
-            </a>
-            <!-- 作品 2 -->
-            <a href="https://www.bomtoon.tw/detail/kissmeifyoucan" target="_blank" rel="noopener noreferrer" class="gallery-item external-link">
-                <img src="img/love/love2.jpeg" alt="Kiss Me If You Can">
-            </a>
-            <!-- 作品 3 -->
-            <a href="https://www.bomtoon.tw/detail/hunter_q" target="_blank" rel="noopener noreferrer" class="gallery-item external-link">
-                <img src="img/love/love5.jpeg" alt="獵人只想安靜生活">
-            </a>
-        </div>
-    </div>
-<!-- 📸 周邊相片冊區塊 -->
-<div class="info-card">
-    <div class="card-title">
-        <span>周邊掉落 📸</span>
-        <span class="hint">左右滑動查看 ➔</span>
-    </div>    
-    <div class="polaroid-grid gallery-container">
-        <div class="polaroid-card gallery-item">
-            <div class="polaroid-inner">
-                <img src="img/merch/merch1.jpg" alt="周邊 1">
-                <span class="polaroid-caption"></span>
-            </div>
-        </div>
-        <div class="polaroid-card gallery-item">
-            <div class="polaroid-inner">
-                <img src="img/merch/merch2.jpg" alt="周邊 2">
-                <span class="polaroid-caption"></span>
-            </div>
-        </div>
-        <div class="polaroid-card gallery-item">
-            <div class="polaroid-inner">
-                <img src="img/merch/merch3.jpg" alt="周邊 3">
-                <span class="polaroid-caption"></span>
-            </div>
-        </div>
-        <div class="polaroid-card gallery-item">
-            <div class="polaroid-inner">
-                <img src="img/merch/merch4.jpg" alt="周邊 4">
-                <span class="polaroid-caption"></span>
-            </div>
-        </div>
-        <div class="polaroid-card gallery-item">
-            <div class="polaroid-inner">
-                <img src="img/merch/merch5.jpg " alt="周邊 5">
-                <span class="polaroid-caption"></span>
-            </div>
-        </div>
-        <div class="polaroid-card gallery-item">
-            <div class="polaroid-inner">
-                <img src="img/merch/merch6.jpg" alt="周邊 6">
-                <span class="polaroid-caption"></span>
-            </div>
-        </div>
-    </div>
-</div>
-
-    <div class="info-card">
-        <div class="card-title">
-            購證 💸
-            <span class="hint">8/11更新</span>
-        </div>
-        <div class="gallery-container">
-            <div class="gallery-item">
-                <img src="img/buy/buy_1.jpeg" alt="buy1">
-            </div>
-            <div class="gallery-item">
-                <img src="img/buy/buy_2.jpeg" alt="buy2">
-            </div>
-            <div class="gallery-item">
-                <img src="img/buy/buy_3.jpeg" alt="buy3">
-            </div>
-            <div class="gallery-item">
-                <img src="img/buy/buy_4.jpeg" alt="buy4">
-            </div>
-            <div class="gallery-item">
-                <img src="img/buy/buy_5.jpeg" alt="buy5">
-            </div>
-            <div class="gallery-item">
-                <img src="img/buy/buy_6.jpeg" alt="buy6">
-            </div>
-            <div class="gallery-item">
-                <img src="img/buy/buy_7.jpeg" alt="buy7">
-            </div>
-            <div class="gallery-item">
-                <img src="img/buy/buy_8.jpeg" alt="buy8">
-            </div>
-            <div class="gallery-item">
-                <img src="img/buy/buy_9.jpeg" alt="buy9">
-            </div>
-            <div class="gallery-item">
-                <img src="img/buy/buy_10.jpeg" alt="buy10">
-            </div>
-            <div class="gallery-item">
-                <img src="img/buy/buy_11.jpeg" alt="buy11">
-            </div>
-            <div class="gallery-item">
-                <img src="img/buy/buy_12.jpeg" alt="buy12">
-            </div>
-            <div class="gallery-item">
-                <img src="img/buy/buy_13.jpeg" alt="buy13">
-            </div>
-            <div class="gallery-item">
-                <img src="img/buy/buy_14.jpeg" alt="buy14">
-            </div>
-            <div class="gallery-item">
-                <img src="img/buy/buy_15.jpeg" alt="buy15">
-            </div>
-        </div>
-    </div>
-
-    <div class="footer">
-        <div class="last-updated" id="last-update">LAST UPDATE: LOADING...</div>
-    </div>
-    </div>
     <!-- 燈箱彈窗結構 -->
     <div id="image-modal" class="modal">
         <span class="modal-close">&times;</span>
@@ -189,15 +199,15 @@
         const closeBtn = document.querySelector('.modal-close');
 
         document.querySelectorAll('.gallery-item:not(.external-link) img').forEach(img => {
-        img.addEventListener('click', () => {
-            if (img.src) {
-                modal.style.display = 'flex';
-                modalImg.src = img.src;
-            }
+            img.addEventListener('click', () => {
+                if (img.src) {
+                    modal.style.display = 'flex';
+                    modalImg.src = img.src;
+                }
+            });
         });
-    });
 
-        // 點擊關閉按鈕或背景時關閉
+        // 點擊關閉按鈕或背景時關閉燈箱
         closeBtn.addEventListener('click', () => modal.style.display = 'none');
         modal.addEventListener('click', (e) => {
             if (e.target === modal) modal.style.display = 'none';
@@ -213,6 +223,137 @@
         if (updateElem) {
             updateElem.textContent = `LAST UPDATE: ${year}.${month}.${day}`;
         }
+
+        // 頭貼點擊隨機對話框
+        const quotes = [
+            "又在看男同了、、、",
+            "愛看年下攻、、",
+            "好吃愛吃😋",
+        ];
+
+        const avatar = document.getElementById('avatar-btn');
+        const bubble = document.getElementById('speech-bubble');
+        let quoteTimer = null;
+
+        if (avatar && bubble) {
+            avatar.addEventListener('click', () => {
+                const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+                bubble.textContent = randomQuote;
+                bubble.style.display = 'block';
+
+                clearTimeout(quoteTimer);
+                quoteTimer = setTimeout(() => {
+                    bubble.style.display = 'none';
+                }, 2500);
+            });
+        }
+
+        // 螢幕小提示 Toast 函數
+        const toast = document.getElementById('pixel-toast');
+        let toastTimer = null;
+        function showToast(message) {
+            if (!toast) return;
+            toast.textContent = message;
+            toast.classList.add('show');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+        }
+
+        // 標籤特定組合判定（浮動小提示）
+        //
+
+        // 1. 單個標籤對應的碎碎念 / 推坑表
+        const singleTagMessages = {
+            '美人受': '推《Dreadful Night》的海洋，又美又強🥺',
+            '強受': '推《Kiss Me If You Can》的喬許，我已經想被他踹ㄌ、、、',
+            '雙強': '推《薔薇與香檳》',
+            '年下攻': '愛年下。',
+            '動物塑': '推《親屬肝係證明書》、、愛看狐狸男🥺',
+            '一見鍾情': '不得不推《今晚溫柔點》',
+            '重逢': '最愛重燃舊愛依舊打得火熱'
+        };
+
+        // 2. 標籤點擊判定
+        const allTags = document.querySelectorAll('.tag');
+
+        allTags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                const text = tag.textContent.trim();
+                const isCurrentlySelected = tag.classList.contains('selected-tag');
+
+                // 點擊已選中的標籤 -> 取消選中
+                if (isCurrentlySelected) {
+                    tag.classList.remove('selected-tag');
+                    return;
+                }
+
+                const isComboItem = (text === '年下攻' || text === '忠犬攻');
+                const currentSelected = Array.from(document.querySelectorAll('.tag.selected-tag'));
+
+                if (isComboItem) {
+                    // 如果目前選中的不是組合標籤，先清空再選
+                    const hasOtherSelected = currentSelected.some(el => {
+                        const t = el.textContent.trim();
+                        return t !== '年下攻' && t !== '忠犬攻';
+                    });
+
+                    if (hasOtherSelected) {
+                        allTags.forEach(el => el.classList.remove('selected-tag'));
+                    }
+
+                    tag.classList.add('selected-tag');
+
+                    // 檢查是否同時選中了「年下攻」與「忠犬攻」
+                    const activeTags = new Set(
+                        Array.from(document.querySelectorAll('.tag.selected-tag')).map(el => el.textContent.trim())
+                    );
+
+                    if (activeTags.has('年下攻') && activeTags.has('忠犬攻')) {
+                        showToast('年下狗勾、、🥺🥺🥺');
+                    } else if (singleTagMessages[text]) {
+                        showToast(singleTagMessages[text]);
+                    }
+                } else {
+                    // 點擊一般碎碎念標籤 -> 全部清空，只保留當前這一個（單選）
+                    allTags.forEach(el => el.classList.remove('selected-tag'));
+                    tag.classList.add('selected-tag');
+
+                    if (singleTagMessages[text]) {
+                        showToast(singleTagMessages[text]);
+                    }
+                }
+            });
+        });
+
+        // 點擊 LAST UPDATE 切換藍色系夜間模式
+        const updateBtn = document.getElementById('last-update');
+        if (updateBtn) {
+            updateBtn.style.cursor = 'pointer';
+            updateBtn.setAttribute('title', '點擊切換藍色夜間模式 🌙');
+            
+            updateBtn.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+            });
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.info-card').forEach(card => observer.observe(card));
+        
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            const bar = document.getElementById('scroll-progress');
+            if (bar) bar.style.width = scrolled + '%';
+        });
     </script>
 </body>
 </html>
