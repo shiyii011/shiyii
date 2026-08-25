@@ -97,7 +97,7 @@ body {
     font-size: 0.75rem;
     white-space: nowrap;
     box-shadow: 2px 2px 0px var(--pixel-border);
-    display: block;
+    display: none;
     pointer-events: none;
     animation: bounce-up 1.8s steps(4, jump-none) infinite;
 }
